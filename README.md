@@ -25,7 +25,7 @@ I will be focusing on 3 requirements:
 
 
 ## Hypothesis and how to validate?
-1. **Hypothesis:** Smokers have significantly higher insurance charges than non-smokers.
+1. **Hypothesis:** Attrited customers have significantly lower total transaction amounts than existing customers..
    - **Validation** Use boxplots to visualise the distribution of charges for smokers vs non-smokers.
 2. **Hypothesis** Insurance charges vary by geographic region.
    - **Validation:** Calculate and visualize the average charges per region using a bar chart.
