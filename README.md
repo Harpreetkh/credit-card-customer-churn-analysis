@@ -26,7 +26,7 @@ I will be focusing on 3 requirements:
 
 ## Hypothesis and how to validate?
 1. **Hypothesis:** Attrited customers have significantly lower total transaction amounts than existing customers..
-   - **Validation** Created a boxplot comparing Total_Trans_Amt for attrited vs. existing customers using a custom visual.
+   - **Validation** Created a clustered column chart comparing Total_Trans_Amt for attrited vs. existing customers using a custom visual.
 
 2. **Hypothesis** Customer attrition is higher among clients with lower credit limits.
    - **Validation:** Created a bar chart showing average Credit_Limit grouped by Attrition_Flag.
