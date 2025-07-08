@@ -1,72 +1,119 @@
+# Project Credit Card Churn Analysis
+
+**Project Credit Card Churn Analysis** is a data analysis project focused on exploring and understanding the factors that influence healthcare insurance charges. Using a real-world dataset, this project investigates how personal attributes (such as age, gender, BMI, family size, and smoking habits) and geographic factors impact insurance costs. The analysis includes data cleaning, visualization, and predictive modeling to provide actionable insights for estimating healthcare expenses.
+
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## Template Instructions
 
-Welcome,
+## Dataset Content
+The dataset used in this project is sourced from [Kaggle: Healthcare Insurance Dataset](https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/data). It contains records of individuals, capturing both personal and geographic attributes that may influence healthcare insurance charges.
 
-This is the Code Institute student template for the Data Analytics capstone project. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+**Features include:**
+- `age`: Age of the primary beneficiary (numeric)
+- `sex`: Gender of the insured individual (`male`, `female`)
+- `bmi`: Body Mass Index, providing an indication of body fat (numeric)
+- `children`: Number of dependents covered by insurance (numeric)
+- `smoker`: Smoking status of the individual (`yes`, `no`)
+- `region`: Residential region in the US (`northeast`, `northwest`, `southeast`, `southwest`)
+- `charges`: Individual medical insurance costs billed by health insurance (numeric)
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+## Business Requirements
+I will be focusing on 3 requirements:
+* 1. Does smoking effect insurance charges?
+* 2. Identify how insurance charges vary across different regions.
+* 3. Look into how BMI and whether someone smokes affects their insurance charges.
 
-## How to use this repo
 
-1. Use this template to create your GitHub project repo. Click the **Use this template** button, then click **Create a new repository**.
+## Hypothesis and how to validate?
+1. **Hypothesis:** Smokers have significantly higher insurance charges than non-smokers.
+   - **Validation** Use boxplots to visualise the distribution of charges for smokers vs non-smokers.
+2. **Hypothesis** Insurance charges vary by geographic region.
+   - **Validation:** Calculate and visualize the average charges per region using a bar chart.
+3. **Hypothesis:** There is a positive correlation between BMI and insurance charges, especially for smokers.
+   - **Validation:** Create a scatter plot of BMI vs. insurance charges, coloured by smoking status, and add a regression line to visually assess the trend between BMI and charges.
 
-1. Copy the URL of your repository to your clipboard.
+## Project Plan
+The project followed these steps:
+* 1. Data Extraction: Load the CSV dataset using pandas.
+* 2. Data Cleaning and Transformation: Checked for missing values, duplicates and ensured correct data types.
+* 3. Data visualisation: Used matplotlib, seaborn and plotly to explore relationships and patterns.
+* 4. Analysis and Interpretation: Each visualisation answered a business question and helped confirm or reject the hypothesis.
 
-1. In VS Code, select **File** -> **Open Folder**.
+## The rationale to map the business requirements to the Data Visualisations
+I used a different type of visualisation for each of th business requirements. For each question I used:
+1. Boxplot for comparing the distribution of smoker vs non smoker in comparison to charges.
+2. Barchart to show regional averages.
+3. Scatterplot with trendline for analysing correlation of BMI and smoking against insurance charges.
+I chose those specific visualisations as it was easier to see the relationship between the different factors and insurance charges. Also, it was appropriate for the type of data that was given.
 
-1. Select your `vscode-projects` folder, then click the **Select Folder** button on Windows, or the **Open** button on Mac.
+## Analysis techniques used
+* Descriptive statistics (describe(), groupby() methods)
+* Boxplots and bar charts for comparison
+* Scatter plots for correlation
+* OLS trendline in Plotly for regression pattern detection
+**Limitations**: The dataset lacks variables like pre-existing conditions, income, or employment type, which could further explain insurance charges.
+**Alternative approaches**: Machine learning models could be used for prediction, but this was outside the scope of this exploratory analysis.
+**Use of AI tools**: ChatGPT was used to get help with coding issues, visualisation tweaks, and Markdown formatting.
 
-1. From the top menu in VS Code, select **Terminal** > **New Terminal** to open the terminal.
+## Ethical considerations
+* This data did not include any personal identifiable information so there were no data privacy concerns.
 
-1. In the terminal, type `git clone` followed by the URL of your GitHub repository. Then hit **Enter**. This command will download all the files in your GitHub repository into your vscode-projects folder.
+## Development Roadmap
+**Challenges faced**:
+* Activating and using a virtual environment in VS Code. I wasn't sure how to do this.
+* Installing and managing required libraries. I assumed these would already be installed.
+* Plotly errors related to rendering in Jupyter.
+**Overcoming them**:
+* I used ChatGPT and Github Copilot in VSCode to troubleshoot technical issues.
+* I restarted kernels and updated environment settings.
+**Next steps**:
+* Including more data within the visualisations.
+* Explore more advanced modelling.
 
-1. In VS Code, select **File** > **Open Folder** again.
+## Main Data Analysis Libraries
+* pandas – for data loading, cleaning, and transformation
+df = pd.read_csv('insurance.csv')
+* matplotlib – for static plots
+plt.figure(figsize=(8,6))
+* seaborn – for statistical visualisations
+sns.boxplot(data=df, x='smoker', y='charges')
+* plotly.express – for interactive charts
+px.scatter(df, x='bmi', y='charges', color='smoker', trendline='ols')
 
-1. This time, navigate to and select the folder for the project you just downloaded. Then, click **Select Folder**.
+## Reflection
+Working on this project was a great learning experience. At the beginning, I ran into a few bumps — like setting up the virtual environment and trying to get GitHub to stop asking me to log in every time I pushed something. It was a bit annoying, but after some trial and error (and help from ChatGPT), I managed to sort it all out.
 
-1. A virtual environment is necessary when working with Python projects to ensure each project's dependencies are kept separate from each other. You need to create your virtual environment, also called a venv, and then ensure that it is activated any time you return to your workspace.
-Click the gear icon in the lower left-hand corner of the screen to open the Manage menu and select **Command Palette** to open the VS Code command palette.
+I also had to troubleshoot a few coding issues, especially when using Plotly. Sometimes the graph wouldn’t show or there were strange errors I didn’t understand at first. Each time, I took the time to dig into what was going wrong and learned a bit more about how things work in Python and Jupyter Notebooks.
 
-1. In the command palette, type: *create environment* and select **Python: Create Environment…**
+Throughout the project, I made sure to stay on track with the business goals and keep my code and markdown sections tidy and clear. If I were to improve anything, I’d maybe try to use even more visualisation types or dig deeper into prediction techniques. But overall, I’m happy with how the project turned out and I feel like I’ve come a long way from where I started.
 
-1. Choose **Venv** from the dropdown list.
+## Credits 
+### Content 
+- **ChatGPT**  
+  I used ChatGPT extensively to guide me through the project when I encountered issues. Specific examples include:
+  - Understanding how to structure markdown cells and write hypotheses and objectives.
+  - Troubleshooting errors such as:
+    - The `plotly` error due to a missing `nbformat` installation.
+    - A `SyntaxError` with no clear trace — eventually resolved by restarting VS Code.
+    - Problems with activating the virtual environment in the terminal.
+  - Helping to format visualizations, like:
+    - Removing error bars from a seaborn bar plot.
+    - Adding a box around the legend in a Plotly scatter plot.
+  - Explaining technical concepts including:
+    - What `groupby().mean().reset_index()` does.
+    - The difference between `sns.barplot()` and `plt.bar()`.
+    - The purpose and function of legends and trendlines in data visualisations.
 
-1. Choose the Python version you installed earlier. Currently, we recommend Python 3.12.8
+- **GitHub Copilot**  
+  GitHub Copilot in VS Code assisted with autocompleting repetitive code and suggesting clean syntax throughout the project, especially during data visualisation and transformation tasks.
 
-1. **DO NOT** click the box next to `requirements.txt`, as you need to do more steps before you can install your dependencies. Click **OK**.
+- **External Dataset Sources**  
+  I reviewed exploratory analysis notebooks from other users on [Kaggle](https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/data) to gain insight into typical approaches. I adapted some initial code for loading and inspecting the data (like using `.info()`, `.describe()`, and `.isnull().sum()`) from these examples.
 
-1. You will see a `.venv` folder appear in the file explorer pane to show that the virtual environment has been created.
-
-1. **Important**: Note that the `.venv` folder is in the `.gitignore` file so that Git won't track it.
-
-1. Return to the terminal by clicking on the TERMINAL tab, or click on the **Terminal** menu and choose **New Terminal** if no terminal is currently open.
-
-1. In the terminal, use the command below to install your dependencies. This may take several minutes.
-
- ```console
- pip3 install -r requirements.txt
- ```
-
-1. Open the `jupyter_notebooks` directory, and click on the notebook you want to open.
-
-1. Click the **kernel** button and choose **Python Environments**.
-
-Note that the kernel says `Python 3.12.8` as it inherits from the venv, so it will be Python-3.12.8 if that is what is installed on your PC. To confirm this, you can use the command below in a notebook code cell.
-
-```console
-! python --version
-```
-
-## Deployment Reminders
-
-* Set the `.python-version` Python version to a [Heroku-22](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version that closest matches what you used in this project.
-* The project can be deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. At the **Deploy** tab, select **GitHub** as the deployment method.
-3. Select your repository name and click **Search**. Once it is found, click **Connect**.
-4. Select the branch you want to deploy, then click **Deploy Branch**.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the `.slugignore` file.
+## Acknowledgements
+Thanks to:
+* Code Institute for the project structure
+* Kaggle for providing the dataset
+* OpenAI for ChatGPT
+* GitHub Copilot for coding support
+* Code Institute peers for being supportive along the way
