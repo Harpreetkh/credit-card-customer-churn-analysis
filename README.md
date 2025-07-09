@@ -25,12 +25,17 @@ I will be focusing on 3 requirements:
 
 
 ## Hypothesis and how to validate?
-1. **Hypothesis:** Smokers have significantly higher insurance charges than non-smokers.
-   - **Validation** Use boxplots to visualise the distribution of charges for smokers vs non-smokers.
-2. **Hypothesis** Insurance charges vary by geographic region.
-   - **Validation:** Calculate and visualize the average charges per region using a bar chart.
-3. **Hypothesis:** There is a positive correlation between BMI and insurance charges, especially for smokers.
-   - **Validation:** Create a scatter plot of BMI vs. insurance charges, coloured by smoking status, and add a regression line to visually assess the trend between BMI and charges.
+1. **Hypothesis:** Attrited customers have significantly lower total transaction amounts than existing customers..
+   - **Validation** Created a clustered column chart comparing Total_Trans_Amt for attrited vs. existing customers using a custom visual.
+
+2. **Hypothesis** Customer attrition is higher among clients with lower credit limits.
+   - **Validation:** Created a bar chart showing average Credit_Limit grouped by Attrition_Flag.
+
+3. **Hypothesis:** Attrition rates vary by marital status, with single customers having higher churn.
+   - **Validation:** Clustered bar chart of Attrition_Flag counts by Marital_Status.
+
+4. **Hypothesis:** Customers with lower education levels tend to churn more often than those with higher education levels.  
+   - **Validation:** Create a 100% stacked bar chart in Power BI showing the proportion of attrited versus existing customers for each education level to compare churn rates across education groups.
 
 ## Project Plan
 The project followed these steps:
