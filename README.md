@@ -1,12 +1,13 @@
 # Project Credit Card Churn Analysis
 
-**Project Credit Card Churn Analysis** is a comprehensive data analysis project focused on exploring and understanding the factors that influence customer attrition in the credit card industry. Using a real-world dataset, this project investigates how customer demographics, financial behavior, and product usage patterns impact churn rates. The analysis includes data transformation, Power BI dashboard creation, and hypothesis validation to provide actionable insights for customer retention strategies.
+**Project Credit Card Churn Analysis** is a comprehensive group data analysis project focused on exploring and understanding the factors that influence customer attrition in the credit card industry. Using a real-world dataset from Kaggle, this project investigates how customer demographics, financial behaviour, and product usage patterns impact churn rates. The analysis includes data transformation, Power BI dashboard creation, and hypothesis validation to provide actionable insights for customer retention strategies.
+The project incorporates data extraction, transformation, visualisation, and business insights using Python and Power BI.
 
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 
 ## Dataset Content
-The dataset used in this project is sourced from [Kaggle: Bank Churners Dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers). It contains records of credit card customers, capturing both demographic and financial attributes that may influence customer churn behavior.
+The dataset used in this project is sourced from [Kaggle: Bank Churners Dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers). It contains records of credit card customers, capturing both demographic and financial attributes that may influence customer churn behaviour.
 
 **Features include:**
 - `Customer_Age`: Age of the customer (numeric)
@@ -19,8 +20,8 @@ The dataset used in this project is sourced from [Kaggle: Bank Churners Dataset]
 - `Attrition_Flag`: Whether customer churned (`Existing Customer`, `Attrited Customer`)
 
 ## Business Requirements
-I will be focusing on 4 key requirements:
-* 1. Analyze the relationship between credit limits and customer churn
+We will be focusing on 4 key requirements:
+* 1. Analyse the relationship between credit limits and customer churn
 * 2. Investigate how transaction amounts correlate with attrition rates
 * 3. Examine demographic factors (education, marital status) that influence churn
 * 4. Identify high-risk customer segments for targeted retention strategies
@@ -32,16 +33,13 @@ I will be focusing on 4 key requirements:
 
 2. **Hypothesis** Customer attrition is higher among clients with lower credit limits.
    - **Validation:** Created a bar chart showing average Credit_Limit grouped by Attrition_Flag.
-   - **Result:** "Attrited customers had an average credit limit of $8.1K compared to $8.7K for existing customers, confirming the hypothesis that customers with lower credit limits are more likely to churn"
-   - **Business Insight:** "The $600 difference in average credit limits indicates that customers with lower credit limits may represent higher risk segments who are more likely to close their accounts, possibly due to financial constraints or dissatisfaction with credit terms"
 
 3. **Hypothesis:** Attrition rates vary by marital status, with single customers having higher churn.
    - **Validation:** Clustered bar chart of Attrition_Flag counts by Marital_Status.
 
 4. **Hypothesis:** Customers with lower education levels tend to churn more often than those with higher education levels.  
    - **Validation:** Created a 100% stacked bar chart showing proportion of attrited vs existing customers by education level, supplemented with calculated attrition rates for proper comparison.
-   - **Result:** "Graduate and Post-Graduate customers show significantly lower churn rates (X%) compared to High School customers (Y%), confirming that higher education correlates with better retention"
-   - **Business Insight:** "Education level serves as a strong predictor of customer loyalty, suggesting targeted retention programs should focus on customers with lower educational attainment"
+ 
 
 ## Key Findings & Business Insights
 
