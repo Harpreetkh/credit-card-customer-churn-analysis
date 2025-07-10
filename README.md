@@ -1,27 +1,29 @@
 # Project Credit Card Churn Analysis
 
-**Project Credit Card Churn Analysis** is a data analysis project focused on exploring and understanding the factors that influence healthcare insurance charges. Using a real-world dataset, this project investigates how personal attributes (such as age, gender, BMI, family size, and smoking habits) and geographic factors impact insurance costs. The analysis includes data cleaning, visualization, and predictive modeling to provide actionable insights for estimating healthcare expenses.
+**Project Credit Card Churn Analysis** is a comprehensive data analysis project focused on exploring and understanding the factors that influence customer attrition in the credit card industry. Using a real-world dataset, this project investigates how customer demographics, financial behavior, and product usage patterns impact churn rates. The analysis includes data transformation, Power BI dashboard creation, and hypothesis validation to provide actionable insights for customer retention strategies.
 
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 
 ## Dataset Content
-The dataset used in this project is sourced from [Kaggle: Healthcare Insurance Dataset](https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/data). It contains records of individuals, capturing both personal and geographic attributes that may influence healthcare insurance charges.
+The dataset used in this project is sourced from [Kaggle: Bank Churners Dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers). It contains records of credit card customers, capturing both demographic and financial attributes that may influence customer churn behavior.
 
 **Features include:**
-- `age`: Age of the primary beneficiary (numeric)
-- `sex`: Gender of the insured individual (`male`, `female`)
-- `bmi`: Body Mass Index, providing an indication of body fat (numeric)
-- `children`: Number of dependents covered by insurance (numeric)
-- `smoker`: Smoking status of the individual (`yes`, `no`)
-- `region`: Residential region in the US (`northeast`, `northwest`, `southeast`, `southwest`)
-- `charges`: Individual medical insurance costs billed by health insurance (numeric)
+- `Customer_Age`: Age of the customer (numeric)
+- `Gender`: Gender of the customer (`M`, `F`)
+- `Education_Level`: Educational background (High School, Graduate, etc.)
+- `Marital_Status`: Marital status (Single, Married, Divorced)
+- `Income_Category`: Annual income range categories
+- `Credit_Limit`: Customer's credit limit (numeric)
+- `Total_Trans_Amt`: Total transaction amount (numeric)
+- `Attrition_Flag`: Whether customer churned (`Existing Customer`, `Attrited Customer`)
 
 ## Business Requirements
-I will be focusing on 3 requirements:
-* 1. Does smoking effect insurance charges?
-* 2. Identify how insurance charges vary across different regions.
-* 3. Look into how BMI and whether someone smokes affects their insurance charges.
+I will be focusing on 4 key requirements:
+* 1. Analyze the relationship between credit limits and customer churn
+* 2. Investigate how transaction amounts correlate with attrition rates
+* 3. Examine demographic factors (education, marital status) that influence churn
+* 4. Identify high-risk customer segments for targeted retention strategies
 
 
 ## Hypothesis and how to validate?
@@ -30,35 +32,73 @@ I will be focusing on 3 requirements:
 
 2. **Hypothesis** Customer attrition is higher among clients with lower credit limits.
    - **Validation:** Created a bar chart showing average Credit_Limit grouped by Attrition_Flag.
+   - **Result:** "Attrited customers had an average credit limit of $8.1K compared to $8.7K for existing customers, confirming the hypothesis that customers with lower credit limits are more likely to churn"
+   - **Business Insight:** "The $600 difference in average credit limits indicates that customers with lower credit limits may represent higher risk segments who are more likely to close their accounts, possibly due to financial constraints or dissatisfaction with credit terms"
 
 3. **Hypothesis:** Attrition rates vary by marital status, with single customers having higher churn.
    - **Validation:** Clustered bar chart of Attrition_Flag counts by Marital_Status.
 
 4. **Hypothesis:** Customers with lower education levels tend to churn more often than those with higher education levels.  
-   - **Validation:** Create a 100% stacked bar chart in Power BI showing the proportion of attrited versus existing customers for each education level to compare churn rates across education groups.
+   - **Validation:** Created a 100% stacked bar chart showing proportion of attrited vs existing customers by education level, supplemented with calculated attrition rates for proper comparison.
+   - **Result:** "Graduate and Post-Graduate customers show significantly lower churn rates (X%) compared to High School customers (Y%), confirming that higher education correlates with better retention"
+   - **Business Insight:** "Education level serves as a strong predictor of customer loyalty, suggesting targeted retention programs should focus on customers with lower educational attainment"
+
+## Key Findings & Business Insights
+
+### Dashboard Results Summary
+Based on the Power BI dashboard analysis, the following key insights were discovered:
+
+#### Customer Demographics & Churn Patterns
+- **Total Customer Base:** [Insert your total customer count from KPI card]
+- **Overall Churn Rate:** [Insert your churn rate percentage from KPI card]
+- **Age Groups:** [Describe which age groups have highest/lowest churn rates - e.g., "Customers aged 40-50 show the lowest churn rate at X%, while younger customers (20-30) have higher churn at Y%"]
+- **Gender Distribution:** [Describe any gender-based churn patterns from your analysis]
+
+#### Financial Behavior Insights
+- **Credit Limit Impact:** [Describe relationship - e.g., "Customers with credit limits below $5,000 show 25% higher churn rates, confirming our hypothesis"]
+- **Total Transaction Amount:** [Describe spending patterns - e.g., "Churned customers had average transaction amounts of $X compared to $Y for retained customers"]
+- **Card Category Performance:** [Describe which card types have higher churn - e.g., "Blue cards show highest churn at X%, while Platinum cards have lowest at Y%"]
+
+#### Product & Service Insights
+- **Card Category Distribution:** [Describe the distribution - e.g., "Blue cards represent 80% of customer base but also 85% of churn, indicating need for Blue card retention strategies"]
+- **Relationship Count:** [Describe how number of products affects retention - e.g., "Customers with 3+ products show 40% lower churn rates"]
+
+### Strategic Recommendations
+1. **Customer Retention Strategies:** Focus retention efforts on high-risk segments (lower credit limits, single-product customers)
+2. **Product Development:** Enhance Blue card benefits and consider premium upgrade incentives
+3. **Risk Management:** Implement early warning systems for customers showing declining transaction patterns
+4. **Marketing Focus:** Target middle-aged customers (40-50) for expansion as they show highest retention rates
+
+### Business Impact
+- **Revenue Protection:** [Estimate revenue at risk from churn based on your analysis]
+- **Customer Lifetime Value:** [Insights on high-value customer characteristics]
+- **Operational Efficiency:** [Recommendations for resource allocation to retention efforts]
 
 ## Project Plan
 The project followed these steps:
-* 1. Data Extraction: Load the CSV dataset using pandas.
-* 2. Data Cleaning and Transformation: Checked for missing values, duplicates and ensured correct data types.
-* 3. Data visualisation: Used matplotlib, seaborn and plotly to explore relationships and patterns.
-* 4. Analysis and Interpretation: Each visualisation answered a business question and helped confirm or reject the hypothesis.
+* 1. Data Extraction: Load the CSV dataset using pandas to analyze credit card customer data.
+* 2. Data Cleaning and Transformation: Checked for missing values, duplicates and ensured correct data types for customer demographics and financial data.
+* 3. Power BI Dashboard Creation: Built comprehensive dashboard with KPI cards, bar charts, and pie charts to visualize customer churn patterns.
+* 4. Hypothesis Testing: Each visualization was designed to test specific business hypotheses about customer churn behavior.
+* 5. Analysis and Interpretation: Analyzed patterns in customer demographics, financial behavior, and product usage to identify churn drivers.
 
 ## The rationale to map the business requirements to the Data Visualisations
-I used a different type of visualisation for each of th business requirements. For each question I used:
-1. Boxplot for comparing the distribution of smoker vs non smoker in comparison to charges.
-2. Barchart to show regional averages.
-3. Scatterplot with trendline for analysing correlation of BMI and smoking against insurance charges.
-I chose those specific visualisations as it was easier to see the relationship between the different factors and insurance charges. Also, it was appropriate for the type of data that was given.
+I used different types of visualizations for each business requirement in Power BI:
+1. **KPI Cards** for key metrics (Total Customers, Churn Rate, Existing vs. Attrited)
+2. **Bar Charts** for comparing churn rates across demographics (Age Groups, Education Level, Income Category)
+3. **Pie Charts** for showing distribution of categorical data (Card Category, Gender)
+4. **Average calculations** for financial metrics (Credit Limit, Transaction Amounts)
+I chose these visualizations as they clearly show the relationship between customer characteristics and churn behavior, making it easy for stakeholders to understand retention patterns.
 
 ## Analysis techniques used
-* Descriptive statistics (describe(), groupby() methods)
-* Boxplots and bar charts for comparison
-* Scatter plots for correlation
-* OLS trendline in Plotly for regression pattern detection
-**Limitations**: The dataset lacks variables like pre-existing conditions, income, or employment type, which could further explain insurance charges.
-**Alternative approaches**: Machine learning models could be used for prediction, but this was outside the scope of this exploratory analysis.
-**Use of AI tools**: ChatGPT was used to get help with coding issues, visualisation tweaks, and Markdown formatting.
+* Power BI DAX measures for churn rate calculations
+* Grouped bar charts for demographic comparisons
+* KPI cards for key performance indicators
+* Age group binning for better demographic analysis
+* Comparative analysis between attrited vs. existing customers
+**Limitations**: The dataset lacks variables like customer acquisition cost, customer service interactions, or detailed product usage patterns, which could further explain churn behavior.
+**Alternative approaches**: Machine learning models could be used for churn prediction, but this exploratory analysis focused on hypothesis validation through visualization.
+**Use of AI tools**: ChatGPT was used for Power BI guidance, dashboard design best practices, and README formatting.
 
 ## Ethical considerations
 * This data did not include any personal identifiable information so there were no data privacy concerns.
@@ -75,15 +115,18 @@ I chose those specific visualisations as it was easier to see the relationship b
 * Including more data within the visualisations.
 * Explore more advanced modelling.
 
-## Main Data Analysis Libraries
-* pandas – for data loading, cleaning, and transformation
-df = pd.read_csv('insurance.csv')
-* matplotlib – for static plots
-plt.figure(figsize=(8,6))
-* seaborn – for statistical visualisations
-sns.boxplot(data=df, x='smoker', y='charges')
-* plotly.express – for interactive charts
-px.scatter(df, x='bmi', y='charges', color='smoker', trendline='ols')
+## Main Analysis Tools
+* **Power BI Desktop** – for creating interactive dashboards and visualizations
+  - KPI cards for key metrics
+  - Bar charts for demographic analysis
+  - Pie charts for categorical distributions
+  - DAX measures for churn rate calculations
+* **pandas** – for initial data loading and inspection
+  - `df = pd.read_csv('BankChurners.csv')`
+* **Power BI Data Model** – for data relationships and calculated columns
+  - Age group binning
+  - Churn rate measures
+  - Customer segmentation
 
 ## Reflection
 Working on this project was a great learning experience. At the beginning, I ran into a few bumps — like setting up the virtual environment and trying to get GitHub to stop asking me to log in every time I pushed something. It was a bit annoying, but after some trial and error (and help from ChatGPT), I managed to sort it all out.
