@@ -118,10 +118,9 @@ We chose these visualisations as they clearly show the relationship between cust
 
 
 ## Main Analysis Tools
-* **Power BI Desktop** – for creating interactive dashboards and visualizations
+* **Power BI Desktop** – for creating interactive dashboards and visualisations
   - KPI cards for key metrics
   - Bar charts for demographic analysis
-  - Pie charts for categorical distributions
   - DAX measures for churn rate calculations
 * **pandas** – for initial data loading and inspection
   - `df = pd.read_csv('BankChurners.csv')`
@@ -132,35 +131,25 @@ We chose these visualisations as they clearly show the relationship between cust
   - 
 **Due to limitations with the version of PowerBI being used, a link cannot be provided, however, a file is available in Dashboards folder labelled Hackathon credit card churn**
 
+## Team Roles
+
+- **Harpreet (Project Manager): ** Oversaw planning, coordination, documentation, and GitHub project management  
+- **Narendran (ETL Lead): ** Handled data extraction, transformation, and preprocessing in Python  
+- **Sumaya (Power BI Lead): ** Designed and developed the interactive dashboard in Power BI  
+- **Franklyn: ** Made independent contributions outside the team workflow, but his efforts in analysis have been recognised
+
 ## Reflection
-Working on this project was a great learning experience. At the beginning, I ran into a few bumps — like setting up the virtual environment and trying to get GitHub to stop asking me to log in every time I pushed something. It was a bit annoying, but after some trial and error (and help from ChatGPT), I managed to sort it all out.
-
-I also had to troubleshoot a few coding issues, especially when using Plotly. Sometimes the graph wouldn’t show or there were strange errors I didn’t understand at first. Each time, I took the time to dig into what was going wrong and learned a bit more about how things work in Python and Jupyter Notebooks.
-
-Throughout the project, I made sure to stay on track with the business goals and keep my code and markdown sections tidy and clear. If I were to improve anything, I’d maybe try to use even more visualisation types or dig deeper into prediction techniques. But overall, I’m happy with how the project turned out and I feel like I’ve come a long way from where I started.
+This project was an enriching group experience. We learnt how to collaborate using GitHub branches and project boards, manage a shared dataset, and build compelling visualisations to support business questions. Although we faced challenges — especially around aligning schedules and ensuring consistent code quality — the experience helped us grow our technical and soft skills. With clearer communication and role expectations, future collaborations can be even more efficient.
+We found it challenging to handle 0s in the dataset, interpret statistical tests, and engineer features. However, we used LLMs to understand our choices and compare them against alternatives before choosing a particular method. 
 
 ## Credits 
 ### Content 
-- **ChatGPT**  
-  I used ChatGPT extensively to guide me through the project when I encountered issues. Specific examples include:
-  - Understanding how to structure markdown cells and write hypotheses and objectives.
-  - Troubleshooting errors such as:
-    - The `plotly` error due to a missing `nbformat` installation.
-    - A `SyntaxError` with no clear trace — eventually resolved by restarting VS Code.
-    - Problems with activating the virtual environment in the terminal.
-  - Helping to format visualizations, like:
-    - Removing error bars from a seaborn bar plot.
-    - Adding a box around the legend in a Plotly scatter plot.
-  - Explaining technical concepts including:
-    - What `groupby().mean().reset_index()` does.
-    - The difference between `sns.barplot()` and `plt.bar()`.
-    - The purpose and function of legends and trendlines in data visualisations.
+- **ChatGPT:** Supported with code guidance, data exploration ideas, markdown writing, and error troubleshooting  
+- **GitHub Copilot:** Assisted with syntax and repetitive code blocks during Python scripting  
+- **Kaggle:** For providing the [Credit Card Customers dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers/data)  
+- **Code Institute:** For the project structure and teamwork framework  
+- **Team Members:** Harpreet, Narendran, Sumaya — and a nod to Franklyn for partial contributions  
 
-- **GitHub Copilot**  
-  GitHub Copilot in VS Code assisted with autocompleting repetitive code and suggesting clean syntax throughout the project, especially during data visualisation and transformation tasks.
-
-- **External Dataset Sources**  
-  I reviewed exploratory analysis notebooks from other users on [Kaggle](https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance/data) to gain insight into typical approaches. I adapted some initial code for loading and inspecting the data (like using `.info()`, `.describe()`, and `.isnull().sum()`) from these examples.
 
 ## Acknowledgements
 Thanks to:
